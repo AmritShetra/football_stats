@@ -7,19 +7,20 @@ def capitalise(string):
     if len(string.split('_')) == 1:
         return string.capitalize()
     else:
-        " ".join(word.capitalize() for word in string.split('_')[:-1]) + \
-            " " + string.split('_')[-1].capitalize()
+        return " ".join(word.capitalize() for word in string.split('_')[:-1]) + \
+               " " + string.split('_')[-1].capitalize()
 
-def plot_scatter(dataset, key_name):
+def plot_scatter(dataset, key_name, target):
     '''
-    Creates scatter graph comparing market value and a feature of the dataset.
+    Creates scatter graph comparing a target (e.g. fpl_value) and a feature of the dataset.
     '''
     plt.scatter(
-        dataset[key_name], dataset['market_value']
+        dataset[key_name], dataset[target]
     )
     key_name = capitalise(key_name)
-    plt.title(key_name + " vs Market Value")
+    target = capitalise(target)
+    plt.title(key_name + " vs " + target)
     plt.xlabel(key_name)
-    plt.ylabel('Market Value')
+    plt.ylabel(target)
     plt.show()
 
