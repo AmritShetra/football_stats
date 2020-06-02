@@ -30,6 +30,7 @@ python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
 ```
+* Run `jupyter notebook`.
 * You can then access the notebook at `localhost:8888` as shown in the terminal window.
 
 ### Acknowledgements
